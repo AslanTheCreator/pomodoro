@@ -1,5 +1,6 @@
 h1 {
   margin: 0;
+  color: #471515;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+  text-decoration: none;
 }
 
 .autorization {
@@ -44,7 +46,7 @@ body {
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .main__container {
@@ -57,11 +59,47 @@ body {
   padding: 20px;
 }
 
+.timer__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.timer__block-mode {
+  cursor: pointer;
+}
+
+.mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 76, 76, 0.15);
+  border: 2px solid #471515;
+  border-radius: 9999px;
+}
+
+.mode__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
 .pomodoro {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 200;
   font-size: 256px;
   line-height: 85%;
+  font-variation-settings: 'opsz' 14, 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79,
+    'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738;
+}
+
+.pomodoro.active {
+  font-weight: 800;
 }
 
 .timer__controller {
@@ -69,14 +107,26 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  gap: 16px;
+}
+
+.timer__controller__setings {
+  padding: 24px;
+  background: rgba(255, 76, 76, 0.15);
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.timer__controller__reset {
+  padding: 24px;
+  background: rgba(255, 76, 76, 0.15);
+  border-radius: 24px;
+  cursor: pointer;
 }
 
 .timer__controller__button {
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 44px;
-  padding: 15px 65px;
+  padding: 32px 48px;
   background-color: rgba(255, 76, 76, 0.71);
   border-radius: 32px;
+  cursor: pointer;
 }
