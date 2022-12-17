@@ -1,3 +1,5 @@
+import mode from './mode.js';
+
 const minute = document.querySelector('.pomodoro__minute');
 const second = document.querySelector('.pomodoro__second');
 const button = document.querySelector('.timer__controller__button');
@@ -21,6 +23,8 @@ button.addEventListener('click', () => {
   pomodoro.classList.add('active');
   interval = setInterval(timeCount, 1000);
 });
+
+mode();
 
 reset.addEventListener('click', () => {
   clearInterval(interval);
