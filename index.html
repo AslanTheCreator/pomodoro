@@ -31,20 +31,40 @@
                 <img class="mode__img" src="img/mode/mode-focus.svg" alt="" />
                 <div class="mode__text">Focus</div>
               </div>
-              <div class="timer__block-pomodoro pomodoro">
-                <div class="pomodoro__minute">25</div>
-                <div class="pomodoro__second">00</div>
+              <div class="timer__block-pomodoro timer-pomodoro">
+                <div class="timer-pomodoro__minute">25</div>
+                <div class="timer-pomodoro__second">00</div>
               </div>
             </div>
             <div class="timer__controller">
-              <div class="timer__controller__reset">
-                <img src="img/controller/reset2.svg" alt="" />
+              <div class="timer__controller__reset timer__control">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M26.6667 10.6667C24.796 6.72 20.716 4 16 4C14.4241 4 12.8637 4.31039 11.4078 4.91345C9.95189 5.5165 8.62902 6.40042 7.51472 7.51472C6.40042 8.62902 5.5165 9.95189 4.91345 11.4078C4.31039 12.8637 4 14.4241 4 16C4 17.5759 4.31039 19.1363 4.91345 20.5922C5.5165 22.0481 6.40042 23.371 7.51472 24.4853C8.62902 25.5996 9.95189 26.4835 11.4078 27.0866C12.8637 27.6896 14.4241 28 16 28C19.1826 28 22.2348 26.7357 24.4853 24.4853C26.7357 22.2348 28 19.1826 28 16M28 4V12H20"
+                    stroke="#471515"
+                    stroke-width="2.66667" />
+                </svg>
               </div>
               <div class="timer__controller__button">
-                <img src="img/controller/ph_play-fill.svg" alt="" />
+                <img class="img__button" src="img/controller/ph_play-fill.svg" alt="" />
               </div>
-              <div class="timer__controller__setings">
-                <img src="img/controller/ph_dots-three-outline-fill.svg" alt="" />
+              <div class="timer__controller__settings timer__control">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    class="settings"
+                    d="M19.5 16C19.5 16.6922 19.2947 17.3689 18.9101 17.9445C18.5256 18.5201 17.9789 18.9687 17.3394 19.2336C16.6999 19.4985 15.9961 19.5678 15.3172 19.4327C14.6383 19.2977 14.0146 18.9644 13.5251 18.4749C13.0356 17.9854 12.7023 17.3617 12.5673 16.6828C12.4322 16.0039 12.5015 15.3001 12.7664 14.6606C13.0313 14.0211 13.4799 13.4744 14.0555 13.0899C14.6311 12.7053 15.3078 12.5 16 12.5C16.9272 12.5033 17.8156 12.8731 18.4712 13.5288C19.1269 14.1844 19.4967 15.0728 19.5 16ZM6 12.5C5.30777 12.5 4.63108 12.7053 4.05551 13.0899C3.47993 13.4744 3.03133 14.0211 2.76642 14.6606C2.50152 15.3001 2.4322 16.0039 2.56725 16.6828C2.7023 17.3617 3.03564 17.9854 3.52513 18.4749C4.01461 18.9644 4.63825 19.2977 5.31719 19.4327C5.99612 19.5678 6.69985 19.4985 7.33939 19.2336C7.97894 18.9687 8.52556 18.5201 8.91015 17.9445C9.29473 17.3689 9.5 16.6922 9.5 16C9.49671 15.0728 9.1269 14.1844 8.47124 13.5288C7.81557 12.8731 6.92725 12.5033 6 12.5ZM26 12.5C25.3078 12.5 24.6311 12.7053 24.0555 13.0899C23.4799 13.4744 23.0313 14.0211 22.7664 14.6606C22.5015 15.3001 22.4322 16.0039 22.5673 16.6828C22.7023 17.3617 23.0356 17.9854 23.5251 18.4749C24.0146 18.9644 24.6383 19.2977 25.3172 19.4327C25.9961 19.5678 26.6999 19.4985 27.3394 19.2336C27.9789 18.9687 28.5256 18.5201 28.9101 17.9445C29.2947 17.3689 29.5 16.6922 29.5 16C29.4967 15.0728 29.1269 14.1844 28.4712 13.5288C27.8156 12.8731 26.9272 12.5033 26 12.5Z"
+                    fill="#471515" />
+                </svg>
               </div>
             </div>
           </div>
@@ -57,7 +77,16 @@
           <div class="popup__content__header">
             <div class="popup__title">Settings</div>
             <div class="popup__close">
-              <img src="img/popup/close.svg" alt="" />
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 34 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.4633 21.6615C22.5689 21.7682 22.6281 21.9122 22.6281 22.0623C22.6281 22.2124 22.5689 22.3564 22.4633 22.4631C22.3558 22.567 22.212 22.6252 22.0625 22.6252C21.9129 22.6252 21.7692 22.567 21.6617 22.4631L17 17.7943L12.3383 22.4631C12.2308 22.567 12.087 22.6252 11.9375 22.6252C11.7879 22.6252 11.6442 22.567 11.5367 22.4631C11.4311 22.3564 11.3718 22.2124 11.3718 22.0623C11.3718 21.9122 11.4311 21.7682 11.5367 21.6615L16.2055 16.9998L11.5367 12.3381C11.447 12.2288 11.4012 12.09 11.4081 11.9488C11.415 11.8076 11.4743 11.674 11.5742 11.574C11.6742 11.4741 11.8078 11.4148 11.949 11.4079C12.0902 11.401 12.229 11.4468 12.3383 11.5365L17 16.2053L21.6617 11.5365C21.771 11.4468 21.9097 11.401 22.051 11.4079C22.1922 11.4148 22.3258 11.4741 22.4257 11.574C22.5257 11.674 22.5849 11.8076 22.5919 11.9488C22.5988 12.09 22.553 12.2288 22.4633 12.3381L17.7945 16.9998L22.4633 21.6615Z"
+                  fill="#471515" />
+              </svg>
             </div>
           </div>
           <div class="popup__content__main">
@@ -69,15 +98,15 @@
             </div>
             <div class="popup__list">
               <div class="popup__list__text">Focus length</div>
-              <input type="number" class="popup__list__element" value="25" />
+              <input type="number" class="popup__list__element popup__element-focus" value="25" />
             </div>
             <div class="popup__list">
               <div class="popup__list__text">Short break length</div>
-              <input type="number" class="popup__list__element" value="25" />
+              <input type="number" class="popup__list__element" value="5" />
             </div>
             <div class="popup__list">
               <div class="popup__list__text">Long break length</div>
-              <input type="number" class="popup__list__element" value="25" />
+              <input type="number" class="popup__list__element" value="15" />
             </div>
           </div>
         </div>
