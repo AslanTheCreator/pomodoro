@@ -1,6 +1,11 @@
+import { dark } from '../js/dark.js';
+
+const msToMin = 60000;
+
 const body = document.querySelector('body');
 
 const focus = document.querySelector('.popup__element-focus');
+const shortRest = document.querySelector('.popup__element-short__rest');
 
 const button = document.querySelector('.timer__controller__button');
 const reset = document.querySelector('.timer__controller__reset');
@@ -15,12 +20,79 @@ const changeStyleTimer = document.querySelector('.timer-pomodoro');
 
 const toggle = document.querySelector('.popup__toggle');
 
-let time = focus.value * 60000;
+const autorization = document.querySelector('.autorization');
+const title = document.querySelector('.title');
+const mode = document.querySelectorAll('.timer__block-mode');
+
+const modeRest = document.querySelector('.mode__rest');
+const modeFocus = document.querySelector('.mode__focus');
+
+const popup_content = document.querySelector('.popup__content');
+
+let arrayElement = [
+  button,
+  reset,
+  settings,
+  popup_content,
+  body,
+  autorization,
+  title,
+  mode[0],
+  mode[1],
+  toggle,
+];
+
+let time = focus.value * msToMin;
 let count = 0;
+let modeCount = 0;
 let interval = 0;
+
+mode.forEach((element) => {
+  element.addEventListener('click', () => {
+    if (!(modeCount % 2)) {
+      modeRest.style.display = 'flex';
+      modeFocus.style.display = 'none';
+      rest();
+      resetTime(shortRest);
+    } else {
+      modeRest.style.display = 'none';
+      modeFocus.style.display = 'flex';
+      removeRest();
+      resetTime(focus);
+    }
+    modeCount++;
+  });
+});
+
+function setTimeContent(min, sec, val) {
+  min.textContent = val.value < 10 ? `0${val.value}` : val.value;
+  sec.textContent = '00';
+}
+
+function setTime(val) {
+  return val.value * msToMin;
+}
+
+function rest() {
+  arrayElement.forEach((element) => {
+    element.classList.add('rest');
+  });
+}
+
+function removeRest() {
+  arrayElement.forEach((element) => {
+    element.classList.remove('rest');
+  });
+}
 
 // Изменяет значение времени в зависимости от значения inputa
 focus.addEventListener('input', (event) => {
+  min.textContent = event.target.value;
+  sec.textContent = '00';
+  time = event.target.value * 60000;
+});
+
+shortRest.addEventListener('input', (event) => {
   min.textContent = event.target.value;
   sec.textContent = '00';
   time = event.target.value * 60000;
@@ -39,7 +111,13 @@ button.addEventListener('click', () => {
   count++;
 });
 
-reset.addEventListener('click', resetTime);
+reset.addEventListener('click', () => {
+  if (modeRest.style.display === 'flex') {
+    resetTime(shortRest);
+  } else {
+    resetTime(focus);
+  }
+});
 
 //функция изменения времени
 function changeTime() {
@@ -59,11 +137,10 @@ const timerContent = (value, func) => {
 };
 
 //сброс времени
-function resetTime() {
+function resetTime(val) {
   clearInterval(interval);
-  time = 1500000;
-  min.textContent = '25';
-  sec.textContent = '00';
+  setTimeContent(min, sec, val);
+  time = setTime(val);
   count = 0;
   returnValues();
 }
@@ -72,7 +149,7 @@ function resetTime() {
 
 toggle.addEventListener('click', () => {
   toggle.classList.toggle('active');
-  dark();
+  dark(arrayElement);
   if (changeStyleTimer.classList.contains('active')) {
     changeButton();
   } else {
@@ -84,7 +161,6 @@ toggle.addEventListener('click', () => {
 
 const popup = document.querySelector('.popup');
 const close = document.querySelector('.popup__close');
-const popup_content = document.querySelector('.popup__content');
 
 settings.addEventListener('click', () => {
   popup.classList.add('open');
@@ -110,12 +186,4 @@ function changeButton() {
   } else {
     imgButton.src = 'img/controller/ph_pause-fill.svg';
   }
-}
-
-function dark() {
-  reset.classList.toggle('dark');
-  settings.classList.toggle('dark');
-  button.classList.toggle('dark');
-  popup_content.classList.toggle('dark');
-  body.classList.toggle('dark');
 }

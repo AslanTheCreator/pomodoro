@@ -18,6 +18,31 @@ body.dark {
   color: #fff2f2;
 }
 
+body.rest {
+  background-color: #f2fff5;
+  color: #14401d;
+}
+
+body.rest.dark {
+  background-color: #040d06;
+  color: #fff2f2;
+}
+
+.dark svg path {
+  fill: #fff2f2;
+  stroke: #fff2f2;
+}
+
+.rest svg path {
+  fill: #14401d;
+  stroke: #14401d;
+}
+
+.rest.dark svg path {
+  fill: #fff2f2;
+  stroke: #fff2f2;
+}
+
 .wrapper {
   width: calc(100vw - 1000px);
   margin: 0 auto;
@@ -41,6 +66,42 @@ body.dark {
   text-decoration: none;
 }
 
+.title.dark svg rect {
+  stroke: #fff2f2;
+}
+
+.title.dark .logo__out {
+  fill: #fff2f2;
+}
+
+.title.dark .logo__inner {
+  fill: #471515;
+}
+
+.title.rest svg rect {
+  stroke: #14401d;
+}
+
+.title.rest .logo__out {
+  fill: #14401d;
+}
+
+.title.rest .logo__inner {
+  fill: #d9fae1;
+}
+
+.title.rest.dark svg rect {
+  stroke: #fff2f2;
+}
+
+.title.rest.dark .logo__out {
+  fill: #fff2f2;
+}
+
+.title.rest.dark .logo__inner {
+  fill: #14401d;
+}
+
 .autorization {
   font-style: normal;
   font-weight: 500;
@@ -52,6 +113,22 @@ body.dark {
   border: 2px solid #471515;
   border-radius: 9999px;
   text-decoration: none;
+}
+
+.autorization.dark {
+  color: #fff2f2;
+  border: 2px solid #fff2f2;
+}
+
+.autorization.rest {
+  color: #14401d;
+  background-color: rgba(77, 218, 110, 0.15);
+  border: 2px solid #14401d;
+}
+
+.autorization.rest.dark {
+  color: #fff2f2;
+  border: 2px solid #fff2f2;
 }
 
 .main {
@@ -79,7 +156,7 @@ body.dark {
   cursor: pointer;
 }
 
-.mode {
+.mode__focus {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,6 +167,25 @@ body.dark {
   border-radius: 9999px;
 }
 
+.mode__focus.dark {
+  border: 2px solid #fff2f2;
+}
+
+.mode__rest {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(77, 218, 110, 0.15);
+  border: 2px solid #14401d;
+  border-radius: 9999px;
+}
+
+.mode__rest.dark {
+  border: 2px solid #fff2f2;
+}
+
 .mode__text {
   font-style: normal;
   font-weight: 500;
@@ -97,8 +193,12 @@ body.dark {
   line-height: 28px;
 }
 
-.mode__text.break {
+.mode__rest .mode__text {
   color: #14401d;
+}
+
+.mode__rest.dark .mode__text {
+  color: #fff2f2;
 }
 
 .timer-pomodoro {
@@ -124,9 +224,13 @@ body.dark {
 
 .timer__control {
   padding: 24px;
-  background: rgba(255, 76, 76, 0.15);
+  background-color: rgba(255, 76, 76, 0.15);
   border-radius: 24px;
   cursor: pointer;
+}
+
+.timer__control.rest {
+  background-color: rgba(77, 218, 110, 0.15);
 }
 
 .timer__controller__settings.dark svg path {
@@ -135,6 +239,17 @@ body.dark {
 
 .timer__controller__reset.dark svg path {
   stroke: #ffd9d9;
+  fill: none;
+}
+
+.timer__controller__reset.rest svg path {
+  stroke: #14401d;
+  fill: none;
+}
+
+.timer__controller__reset.rest.dark svg path {
+  stroke: #ffd9d9;
+  fill: none;
 }
 
 .timer__controller__button {
@@ -142,6 +257,10 @@ body.dark {
   background-color: rgba(255, 76, 76, 0.71);
   border-radius: 32px;
   cursor: pointer;
+}
+
+.timer__controller__button.rest {
+  background-color: rgba(77, 218, 110, 0.62);
 }
 
 /* popup===================================================== */
@@ -175,6 +294,14 @@ body.dark {
   background-color: #0d0404;
 }
 
+.popup__content.rest {
+  background-color: #f2fff5;
+}
+
+.popup__content.rest.dark {
+  background-color: #040d06;
+}
+
 .popup__content__header {
   display: flex;
   justify-content: space-between;
@@ -183,9 +310,6 @@ body.dark {
 }
 .popup__close {
   cursor: pointer;
-}
-.popup__content.dark .popup__close svg path {
-  fill: #fff2f2;
 }
 
 .popup__title {
@@ -253,6 +377,16 @@ body.dark {
   background: #0d0404;
 }
 
+.popup__toggle.active .indikator {
+  left: 17px;
+  background: #0d0404;
+}
+
+.popup__toggle.rest.active .indikator {
+  left: 17px;
+  background: #040d06;
+}
+
 .popup__list__element {
   width: 76px;
   height: 40px;
@@ -262,8 +396,18 @@ body.dark {
   text-align: center;
 }
 
+.popup__content.rest .popup__list__element {
+  background-color: #f2fff5;
+}
+
 .popup__content.dark .popup__list__element {
   background-color: #0d0404;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.popup__content.rest.dark .popup__list__element {
+  background-color: #040d06;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
