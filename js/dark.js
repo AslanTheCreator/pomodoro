@@ -1,4 +1,4 @@
-export function dark(array) {
+function dark(array) {
   array.forEach((element) => {
     element.classList.toggle('dark');
   });

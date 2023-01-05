@@ -1,4 +1,4 @@
-import { dark } from '../js/dark.js';
+// import { dark } from '../js/dark.js';
 
 const msToMin = 60000;
 
@@ -22,7 +22,6 @@ const toggle = document.querySelector('.popup__toggle');
 
 const autorization = document.querySelector('.autorization');
 const title = document.querySelector('.title');
-const mode = document.querySelectorAll('.timer__block-mode');
 
 const modeRest = document.querySelector('.mode__rest');
 const modeFocus = document.querySelector('.mode__focus');
@@ -47,61 +46,27 @@ let count = 0;
 let modeCount = 0;
 let interval = 0;
 
-mode.forEach((element) => {
-  element.addEventListener('click', () => {
-    if (!(modeCount % 2)) {
-      modeRest.style.display = 'flex';
-      modeFocus.style.display = 'none';
-      rest();
-      resetTime(shortRest);
-    } else {
-      modeRest.style.display = 'none';
-      modeFocus.style.display = 'flex';
-      removeRest();
-      resetTime(focus);
-    }
-    modeCount++;
-  });
-});
-
-function setTimeContent(min, sec, val) {
-  min.textContent = val.value < 10 ? `0${val.value}` : val.value;
-  sec.textContent = '00';
-}
-
-function setTime(val) {
-  return val.value * msToMin;
-}
-
-function rest() {
-  arrayElement.forEach((element) => {
-    element.classList.add('rest');
-  });
-}
-
-function removeRest() {
-  arrayElement.forEach((element) => {
-    element.classList.remove('rest');
-  });
-}
-
 // Изменяет значение времени в зависимости от значения inputa
 focus.addEventListener('input', (event) => {
-  min.textContent = event.target.value;
-  sec.textContent = '00';
-  time = event.target.value * 60000;
+  if (modeRest.style.display !== 'flex') {
+    min.textContent = event.target.value;
+    sec.textContent = '00';
+    time = event.target.value * 60000;
+  }
 });
 
 shortRest.addEventListener('input', (event) => {
-  min.textContent = event.target.value;
-  sec.textContent = '00';
-  time = event.target.value * 60000;
+  if (modeRest.style.display === 'flex') {
+    min.textContent = event.target.value;
+    sec.textContent = '00';
+    time = event.target.value * 60000;
+  }
 });
 
 //пуск и пауза таймера
 button.addEventListener('click', () => {
   if (!(count % 2)) {
-    interval = setInterval(changeTime, 1000);
+    interval = setInterval(calcTime, 1000);
     changeButton();
     changeStyleTimer.classList.add('active');
   } else {
@@ -118,32 +83,6 @@ reset.addEventListener('click', () => {
     resetTime(focus);
   }
 });
-
-//функция изменения времени
-function changeTime() {
-  let minutes = Math.floor((time / (1000 * 60)) % 60);
-  let seconds = Math.floor((time / 1000) % 60);
-  time -= 1000;
-  timerContent(min, addZero(minutes));
-  timerContent(sec, addZero(seconds));
-}
-
-const addZero = (value) => {
-  return value < 10 ? `0${value}` : value;
-};
-
-const timerContent = (value, func) => {
-  value.textContent = func;
-};
-
-//сброс времени
-function resetTime(val) {
-  clearInterval(interval);
-  setTimeContent(min, sec, val);
-  time = setTime(val);
-  count = 0;
-  returnValues();
-}
 
 //popup
 
