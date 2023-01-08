@@ -18,13 +18,23 @@ body.dark {
   color: #fff2f2;
 }
 
-body.rest {
+body.shortRest {
   background-color: #f2fff5;
   color: #14401d;
 }
 
-body.rest.dark {
+body.shortRest.dark {
   background-color: #040d06;
+  color: #fff2f2;
+}
+
+body.longRest {
+  background-color: #f2f9ff;
+  color: #153047;
+}
+
+body.longRest.dark {
+  background-color: #04090d;
   color: #fff2f2;
 }
 
@@ -33,24 +43,34 @@ body.rest.dark {
   stroke: #fff2f2;
 }
 
-.rest svg path {
+.shortRest svg path {
   fill: #14401d;
   stroke: #14401d;
 }
 
-.rest.dark svg path {
+.shortRest.dark svg path {
+  fill: #fff2f2;
+  stroke: #fff2f2;
+}
+
+.longRest svg path {
+  fill: #153047;
+  stroke: #153047;
+}
+
+.longRest.dark svg path {
   fill: #fff2f2;
   stroke: #fff2f2;
 }
 
 .wrapper {
-  width: calc(100vw - 1000px);
+  /* width: calc(100vw - 1000px); */
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: 1000px;
 }
 
 .header {
-  padding: 20px;
+  padding: 20px 50px;
 }
 
 .header__container {
@@ -78,28 +98,52 @@ body.rest.dark {
   fill: #471515;
 }
 
-.title.rest svg rect {
+.title.shortRest svg rect {
   stroke: #14401d;
 }
 
-.title.rest .logo__out {
+.title.shortRest .logo__out {
   fill: #14401d;
 }
 
-.title.rest .logo__inner {
+.title.shortRest .logo__inner {
   fill: #d9fae1;
 }
 
-.title.rest.dark svg rect {
+.title.shortRest.dark svg rect {
   stroke: #fff2f2;
 }
 
-.title.rest.dark .logo__out {
+.title.shortRest.dark .logo__out {
   fill: #fff2f2;
 }
 
-.title.rest.dark .logo__inner {
+.title.shortRest.dark .logo__inner {
   fill: #14401d;
+}
+
+.title.longRest svg rect {
+  stroke: #153047;
+}
+
+.title.longRest .logo__out {
+  fill: #153047;
+}
+
+.title.longRest .logo__inner {
+  fill: #d9eeff;
+}
+
+.title.longRest.dark svg rect {
+  stroke: #fff2f2;
+}
+
+.title.longRest.dark .logo__out {
+  fill: #fff2f2;
+}
+
+.title.longRest.dark .logo__inner {
+  fill: #153047;
 }
 
 .autorization {
@@ -120,13 +164,25 @@ body.rest.dark {
   border: 2px solid #fff2f2;
 }
 
-.autorization.rest {
+.autorization.shortRest {
   color: #14401d;
   background-color: rgba(77, 218, 110, 0.15);
   border: 2px solid #14401d;
 }
 
-.autorization.rest.dark {
+.autorization.shortRest.dark {
+  color: #fff2f2;
+  border: 2px solid #fff2f2;
+}
+
+.autorization.longRest {
+  color: #153047;
+  background: rgba(76, 172, 255, 0.15);
+
+  border: 2px solid #153047;
+}
+
+.autorization.longRest.dark {
   color: #fff2f2;
   border: 2px solid #fff2f2;
 }
@@ -171,7 +227,7 @@ body.rest.dark {
   border: 2px solid #fff2f2;
 }
 
-.mode__rest {
+.mode__short__rest {
   display: none;
   justify-content: center;
   align-items: center;
@@ -182,7 +238,22 @@ body.rest.dark {
   border-radius: 9999px;
 }
 
-.mode__rest.dark {
+.mode__short__rest.dark {
+  border: 2px solid #fff2f2;
+}
+
+.mode__long__rest {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(76, 172, 255, 0.15);
+  border: 2px solid #153047;
+  border-radius: 9999px;
+}
+
+.mode__long__rest.dark {
   border: 2px solid #fff2f2;
 }
 
@@ -193,11 +264,19 @@ body.rest.dark {
   line-height: 28px;
 }
 
-.mode__rest .mode__text {
+.mode__short__rest .mode__text {
   color: #14401d;
 }
 
-.mode__rest.dark .mode__text {
+.mode__short__rest.dark .mode__text {
+  color: #fff2f2;
+}
+
+.mode__long__rest .mode__text {
+  color: #153047;
+}
+
+.mode__long__rest.dark .mode__text {
   color: #fff2f2;
 }
 
@@ -229,10 +308,6 @@ body.rest.dark {
   cursor: pointer;
 }
 
-.timer__control.rest {
-  background-color: rgba(77, 218, 110, 0.15);
-}
-
 .timer__controller__settings.dark svg path {
   fill: #ffd9d9;
 }
@@ -242,12 +317,30 @@ body.rest.dark {
   fill: none;
 }
 
-.timer__controller__reset.rest svg path {
+.timer__control.shortRest {
+  background-color: rgba(77, 218, 110, 0.15);
+}
+
+.timer__controller__reset.shortRest svg path {
   stroke: #14401d;
   fill: none;
 }
 
-.timer__controller__reset.rest.dark svg path {
+.timer__controller__reset.shortRest.dark svg path {
+  stroke: #ffd9d9;
+  fill: none;
+}
+
+.timer__control.longRest {
+  background-color: rgba(76, 172, 255, 0.15);
+}
+
+.timer__controller__reset.longRest svg path {
+  stroke: #153047;
+  fill: none;
+}
+
+.timer__controller__reset.longRest.dark svg path {
   stroke: #ffd9d9;
   fill: none;
 }
@@ -259,8 +352,12 @@ body.rest.dark {
   cursor: pointer;
 }
 
-.timer__controller__button.rest {
+.timer__controller__button.shortRest {
   background-color: rgba(77, 218, 110, 0.62);
+}
+
+.timer__controller__button.longRest {
+  background-color: rgba(76, 172, 255, 0.62);
 }
 
 /* popup===================================================== */
@@ -294,12 +391,20 @@ body.rest.dark {
   background-color: #0d0404;
 }
 
-.popup__content.rest {
+.popup__content.shortRest {
   background-color: #f2fff5;
 }
 
-.popup__content.rest.dark {
+.popup__content.shortRest.dark {
   background-color: #040d06;
+}
+
+.popup__content.longRest {
+  background-color: #f2f9ff;
+}
+
+.popup__content.longRest.dark {
+  background-color: #04090d;
 }
 
 .popup__content__header {
@@ -382,9 +487,14 @@ body.rest.dark {
   background: #0d0404;
 }
 
-.popup__toggle.rest.active .indikator {
+.popup__toggle.shortRest.active .indikator {
   left: 17px;
   background: #040d06;
+}
+
+.popup__toggle.longRest.active .indikator {
+  left: 17px;
+  background: #04090d;
 }
 
 .popup__list__element {
@@ -396,7 +506,7 @@ body.rest.dark {
   text-align: center;
 }
 
-.popup__content.rest .popup__list__element {
+.popup__content.shortRest .popup__list__element {
   background-color: #f2fff5;
 }
 
@@ -406,8 +516,26 @@ body.rest.dark {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.popup__content.rest.dark .popup__list__element {
+.popup__content.shortRest.dark .popup__list__element {
   background-color: #040d06;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+.popup__content.longRest .popup__list__element {
+  background-color: #f2f9ff;
+}
+
+.popup__content.longRest.dark .popup__list__element {
+  background-color: #04090d;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 1250px) {
+  /* .wrapper {
+    width: calc(100vw - 700px);
+    margin: 0 auto;
+    max-width: 1400px;
+  } */
+} ;

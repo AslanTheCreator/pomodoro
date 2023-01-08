@@ -1,11 +1,12 @@
 // import { dark } from '../js/dark.js';
 
-const msToMin = 60000;
+const MS_TO_MIN = 60000;
 
 const body = document.querySelector('body');
 
 const focus = document.querySelector('.popup__element-focus');
 const shortRest = document.querySelector('.popup__element-short__rest');
+const longRest = document.querySelector('.popup__element-long__rest');
 
 const button = document.querySelector('.timer__controller__button');
 const reset = document.querySelector('.timer__controller__reset');
@@ -23,7 +24,8 @@ const toggle = document.querySelector('.popup__toggle');
 const autorization = document.querySelector('.autorization');
 const title = document.querySelector('.title');
 
-const modeRest = document.querySelector('.mode__rest');
+const modeShortRest = document.querySelector('.mode__short__rest');
+const modeLongRest = document.querySelector('.mode__long__rest');
 const modeFocus = document.querySelector('.mode__focus');
 
 const popup_content = document.querySelector('.popup__content');
@@ -38,33 +40,35 @@ let arrayElement = [
   title,
   mode[0],
   mode[1],
+  mode[2],
   toggle,
 ];
 
-let time = focus.value * msToMin;
+let time = focus.value * MS_TO_MIN;
 let count = 0;
 let modeCount = 0;
 let interval = 0;
 
 // Изменяет значение времени в зависимости от значения inputa
 focus.addEventListener('input', (event) => {
-  if (modeRest.style.display !== 'flex') {
-    min.textContent = event.target.value;
-    sec.textContent = '00';
-    time = event.target.value * 60000;
+  if (modeShortRest.style.display !== 'flex') {
+    setTime(min, sec, event.target);
   }
 });
 
 shortRest.addEventListener('input', (event) => {
-  if (modeRest.style.display === 'flex') {
-    min.textContent = event.target.value;
-    sec.textContent = '00';
-    time = event.target.value * 60000;
+  if (modeShortRest.style.display === 'flex') {
+    setTime(min, sec, event.target);
   }
 });
 
 //пуск и пауза таймера
 button.addEventListener('click', () => {
+  startTimer(count);
+  count++;
+});
+
+function startTimer(count) {
   if (!(count % 2)) {
     interval = setInterval(calcTime, 1000);
     changeButton();
@@ -73,11 +77,10 @@ button.addEventListener('click', () => {
     clearInterval(interval);
     returnValues();
   }
-  count++;
-});
+}
 
 reset.addEventListener('click', () => {
-  if (modeRest.style.display === 'flex') {
+  if (modeShortRest.style.display === 'flex') {
     resetTime(shortRest);
   } else {
     resetTime(focus);
